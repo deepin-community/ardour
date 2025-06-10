@@ -1,4 +1,155 @@
 #!/usr/bin/make -f
+#
+# Robert Jordens <jordens@debian.org>
+# © 2019, IOhannes m zmölnig <umlaeute@debian.org>
+# © 2020, Olivier Humbert <trebmuh@tuxfamily.org>
+#
+# This software may be used and distributed according to the terms
+# of the GNU General Public License, incorporated herein by reference.
 
+export DH_VERBOSE = 1
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+include /usr/share/dpkg/pkg-info.mk
+include /usr/share/dpkg/buildflags.mk
+BUILD_DATE:=$(shell date -u -d "@$(SOURCE_DATE_EPOCH)" +"%F")
+
+# Ardour uses some c++11 features requiring atomic_load_8 and
+# probably more, so we need to link with libatomic on
+# armel, powerpc, powerpcspe, m68k, mips, mipsel, sh4, ...
+# see also:
+# - https://gcc.gnu.org/wiki/Atomic
+# - https://gcc.gnu.org/wiki/Atomic/GCCMM/LIbrary
+# - packaging for 'clasp', 'juce',...
+# link with libatomic on architectures without built-in atomic
+ifneq ($(strip $(filter $(DEB_HOST_ARCH), armel powerpc powerpcspe m68k mips mipsel sh4 riscv64)),)
+        LDFLAGS += -latomic
+endif
+
+ifeq ($(DEB_HOST_ARCH), mips64el)
+        CXXFLAGS += -mxgot
+endif
+
+ifneq (,$(filter $(DEB_HOST_ARCH), mipsel sh4))
+        CXXFLAGS += -g1
+endif
+
+########### WAF options ############
+waf-light = python3 $(CURDIR)/debian/waf/waf-light
+waf-configure-options = \
+	--freedesktop \
+	--configdir=/etc/ \
+	--noconfirm \
+	--prefix=/usr/ \
+	--libjack=weak \
+	--no-phone-home \
+	--use-external-libs \
+	--optimize \
+	--cxx17 \
+	--ptformat \
+	--lv2dir=/usr/lib/lv2 \
+	$(empty)
+
+
+DIST_TARGET = none
+ifneq (,$(findstring i386,$(DEB_BUILD_ARCH)))
+	DIST_TARGET = i686
+endif
+ifneq (,$(findstring amd64,$(DEB_BUILD_ARCH)))
+	DIST_TARGET = x86_64
+endif
+
+BACKENDS = jack,dummy
+ifneq (,$(findstring linux,$(DEB_HOST_ARCH_OS)))
+# ALSA Backend is only available on Linux
+	BACKENDS = jack,alsa,dummy,pulseaudio
+else
+	waf-configure-options += \
+		--no-fpu-optimization \
+		$(empty)
+endif
+
+ARDOUR_LIBRARY_PATH := /usr/lib/ardour8/
+
+waf-configure-options += \
+	--with-backends=$(BACKENDS) \
+	--dist-target=$(DIST_TARGET) \
+	$(empty)
+
+DEB_WAF_INVOKE = \
+	CPPFLAGS="$(CPPFLAGS)" \
+	CFLAGS="$(CFLAGS)" \
+	CXXFLAGS="$(CXXFLAGS)" \
+	LDFLAGS="$(LDFLAGS) -Wl,--as-needed" \
+	$(waf-light) -v --destdir=$(CURDIR)/debian/tmp
+
+deb_revision := libs/ardour/revision.cc
+waf_extras := debian/waf/waflib/extras/autowaf.py debian/waf/waflib/extras/misc.py
+
+########### build overrides options ############
 %:
 	dh $@
+
+execute_before_dh_auto_build:
+	@echo "blhc: ignore-line-regexp: ^\[[ 0-9]+/[ 0-9]+\] Compiling .*"
+
+override_dh_auto_build: genfiles
+	$(DEB_WAF_INVOKE) configure $(waf-configure-options)
+	$(DEB_WAF_INVOKE) build i18n_mo
+
+override_dh_auto_install: override_dh_auto_build manpages genfiles
+	$(DEB_WAF_INVOKE) install
+	for res in 16 22 32 48; do \
+		mkdir -p $(CURDIR)/debian/ardour/usr/share/icons/hicolor/$${res}x$${res}/mimetypes; \
+		cp $(CURDIR)/gtk2_ardour/icons/application-x-ardour_$${res}px.png \
+			$(CURDIR)/debian/ardour/usr/share/icons/hicolor/$${res}x$${res}/mimetypes/application-x-ardour.png ; \
+	done
+
+## ardour includes a couple of private lib*.so files, which make
+## dh_makeshlibs emit a useless call to `ldconfig` in the postinst script.
+## since we don't have any public libraries, we just suppress that call.
+override_dh_makeshlibs:
+	dh_makeshlibs --no-scripts
+override_dh_shlibdeps:
+	dh_shlibdeps -- -l$(CURDIR)/debian/ardour/$(ARDOUR_LIBRARY_PATH)
+
+execute_before_dh_clean: manpageclean
+	find . -name "*.pyc" -delete || true
+	find . -name "*.mo" -delete || true
+
+########### build intermediates ############
+.PHONY: genfiles
+genfiles: $(deb_revision) $(waf_extras)
+
+$(deb_revision):
+	echo '#include "ardour/revision.h"' > $@
+	echo "namespace ARDOUR { const char* revision = \"$(subst +,~,$(DEB_VERSION_UPSTREAM_REVISION))\"; const char* date = \"$(BUILD_DATE)\"; }" >> $@
+
+debian/waf/waflib/extras/%: tools/%
+	cp $< $@
+
+MANPAGES = ardour8-copy-mixer.1 \
+	ardour8-export.1 \
+	ardour8-new_empty_session.1 \
+	ardour8-new_session.1 \
+	ardour8-lua.1 \
+	$(empty)
+.PHONY: manpages manpageclean
+$(MANPAGES): debian/ardour-utils.1
+	cp $^ $@
+manpages: $(MANPAGES)
+manpageclean:
+	rm -f $(MANPAGES)
+
+################ d/copyright helper ##############
+DEB_COPYRIGHT_CHECK_IGNORE_REGEX = \
+        debian/.*|.*\.ico|.*\.icns|.*\.png|.*\.xcf|.*\.wav|.*\.flac|.*\.ogg|.*\.touchosc|.*\.tosc|.*\.pdf|.*\.woff
+# licensecheck v1
+.PHONY: licensecheck
+licensecheck:
+	LANG=C.UTF-8 licensecheck \
+		-i "^($(DEB_COPYRIGHT_CHECK_IGNORE_REGEX))$$" \
+		--check '.*' --recursive --deb-machine --lines 0 * \
+		> debian/copyright_newhints
+	cmp debian/copyright_hints debian/copyright_newhints \
+		&& rm debian/copyright_newhints

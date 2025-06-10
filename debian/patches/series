@@ -1,0 +1,10 @@
+0010-python3.patch
+0020-binary_name.patch
+0030-wscript.patch
+0050-log-stdout.patch
+0060-warn-video-timeline.patch
+0070-bashisms.patch
+0100-build-reproducible.patch
+0200-spelling.patch
+0500-jack1.patch
+0510-doxygen-awesome-css.patch

@@ -1,0 +1,42 @@
+Description: Use system-provided doxygen-awesome-css
+ rather than the vendored library
+Author: IOhannes m zmölnig <umlaeute@debian.org>
+Origin: Debian
+Forwarded: not-needed
+Last-Update: 2024-09-29
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- ardour.orig/doc/Doxyfile
++++ ardour/doc/Doxyfile
+@@ -1279,10 +1279,10 @@
+ # list). For an example see the documentation.
+ # This tag requires that the tag GENERATE_HTML is set to YES.
+ 
+-HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \
++HTML_EXTRA_STYLESHEET  = /usr/share/doxygen-awesome-css/doxygen-awesome.css \
+                          doxygen-awesome-css/doxygen-custom/custom.css \
+-                         doxygen-awesome-css/doxygen-awesome-sidebar-only.css \
+-                         doxygen-awesome-css/doxygen-awesome-sidebar-only-darkmode-toggle.css \
++                         /usr/share/doxygen-awesome-css/doxygen-awesome-sidebar-only.css \
++                         /usr/share/doxygen-awesome-css/doxygen-awesome-sidebar-only-darkmode-toggle.css \
+                          doxygen-awesome-css/doxygen-custom/custom-alternative.css
+ 
+ # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
+@@ -1293,12 +1293,12 @@
+ # files will be copied as-is; there are no commands or markers available.
+ # This tag requires that the tag GENERATE_HTML is set to YES.
+ 
+-HTML_EXTRA_FILES       = doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
+-                         doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
+-                         doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
++HTML_EXTRA_FILES       = /usr/share/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
++                         /usr/share/doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
++                         /usr/share/doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
+                          doxygen-awesome-css/doxygen-custom/toggle-alternative-theme.js \
+-                         doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
+-                         doxygen-awesome-css/doxygen-awesome-tabs.js
++                         /usr/share/doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
++                         /usr/share/doxygen-awesome-css/doxygen-awesome-tabs.js
+ 
+ # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
+ # will adjust the colors in the style sheet and background images according to

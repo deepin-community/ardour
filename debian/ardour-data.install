@@ -1,0 +1,2 @@
+debian/tmp/usr/share/ardour8/*
+gtk2_ardour/icons/cursor_*/         usr/share/ardour8/icons

@@ -1,22 +1,1113 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: template-repository
-Source: https://github.com/deepin-community/template-repository
+Upstream-Name: Ardour
+Upstream-Contact: Paul Davis <paul@linuxaudiosystems.com>
+Source: https://ardour.org/download
+Files-Excluded:
+ waf
+ msvc*/*
+ MSVC*/*
+ gtk2_ardour/win32/*
+ libs/tk/ydk-pixbuf/pixops/timescale
+ doc/doxygen-awesome-css/*.*
+Files-Included:
+ doc/doxygen-awesome-css/doxygen-custom/*
 
 Files: *
-Copyright: 2023 Tsic404 <liuheng@deepin.org>
+Copyright:
+ 1998-2024, Paul Davis
+ 2004-2024, Robin Gareus <robin@gareus.org>
+ 2009-2016, David Robillard <d@drobilla.net>
+ 2010-2012, Carl Hetherington <carl@carlh.net>
+ 2007-2017, Tim Mayberry <mojofunk@gmail.com>
+ 2006-2017, Nick Mainsbridge <mainsbridge@gmail.com>
+ 2012-2023, Ben Loftis <ben@harrisonconsoles.com>
+ 2005-2009, Taybin Rutkin <taybin@taybin.com>
+ 2008-2018, John Emmas <john@creativepost.co.uk>
+ 2008-2014, Sakari Bergen <sakari.bergen@beatwaves.net>
+ 2015-2022, Len Ovens <len@ovenwerks.net>
+ 2015-2017, André Nusser <andre.nusser@googlemail.com>
+ 2006-2024, Ardour Developers and others
 License: GPL-2+
- This package is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
+Comment:
+ In the rest of this document, we mostly use the term "Ardour Developers"
+ for this core development team (or parts thereof)
+
+
+# gtk2_ardour
+Files:
+ gtk2_ardour/nsmclient.*
+ gtk2_ardour/nsm.*
+Copyright:
+ 2012, Jonathan Moore Liles
+License: GPL-2+
+
+Files: gtk2_ardour/rgb_macros.h
+Copyright:
+ 2000, EMC Capital Management, Inc
+License: GPL-2+
+
+Files:
+ gtk2_ardour/utils.cc
+Copyright:
+ 2000, Greg Ercolano <erco@3dsite.com>
+ 2003, Paul Davis
+License: GPL-2+
+
+Files:
+ gtk2_ardour/pianokeyboard.*
+Copyright:
+ 2007, 2008 Edward Tomasz Napierała <trasz@FreeBSD.org>
+ 2019, Robin Gareus <robin@gareus.org>
+License: BSD-2-clause
+
+
+# libs
+
+## libs/ardour
+Files:
+ libs/ardour/vumeterdsp.cc
+ libs/ardour/kmeterdsp.cc
+ libs/ardour/iec2ppmdsp.cc
+ libs/ardour/mtdm.cc
+ libs/ardour/ardour/iec1ppmdsp.h
+ libs/ardour/ardour/iec2ppmdsp.h
+ libs/ardour/ardour/kmeterdsp.h
+ libs/ardour/ardour/vumeterdsp.h
+ libs/ardour/ardour/mtdm.h
+Copyright:
+ 2003-2018, Fons Adriaensen <fons@linuxaudio.org>
+License: GPL-2+
+
+Files:
+ libs/ardour/ardour/ticker.h libs/ardour/ticker.cc
+ libs/ardour/ardour/midi_patch_manager.h libs/ardour/midi_patch_manager.cc
+Copyright:
+ 2008, Hans Baier
+License: GPL-2+
+
+Files:
+ libs/ardour/ardour/vestige/*
+Copyright:
+ 2006, Javier Serrano Polo <jasp00/at/users.sourceforge.net>
+License: GPL-2+
+
+Files:
+ libs/ardour/cycle_timer.cc
+Copyright:
+ 2002, Andrew Morton
+License: GPL-2+
+
+Files:
+ libs/ardour/audio_unit.cc
+Copyright:
+ 2006-2009, Paul Davis
+ Sophia Poirier
+License: GPL-2+
+
+Files:
+ libs/ardour/sse_functions_64bit.s
+Copyright:
+ 2005-2006, John Rigg
+ 2005-2006, Paul Davis
+License: GPL-2+
+
+Files:
+ libs/ardour/ardour/mix.h
+Copyright:
+ 2005, Sampo Savolainen
+License: GPL-2+
+
+Files:
+ libs/ardour/ardour/logcurve.h
+Copyright:
+ 2001, Paul Davis
+ 2001, Steve Harris
+License: GPL-2+
+
+Files:
+ libs/ardour/ardour/spline.h
+Copyright:
+ 1997, David Mosberger
+License: LGPL-2+
+
+Files:
+ libs/ardour/lv2_evbuf.*
+Copyright:
+ 2008-2012, David Robillard <https://drobilla.net>
+License: ISC
+
+Files:
+ libs/ardour/ardour/ladspa.h
+Copyright:
+ 2000-2002, Richard W.E. Furse, Paul Barton-Davis
+License: LGPL-2.1+
+
+Files:
+ libs/ardour/ffmpegfile*.*
+ libs/ardour/ardour/ffmpegfile*.*
+Copyright:
+ 2021, Marijn Kruisselbrink <mek@google.com>
+License: GPL-2+
+
+Files: libs/ardour/ardour/minibpm.h
+ libs/ardour/minibpm.cc
+Copyright: 2012, Particular Programs Ltd.
+License: GPL-2+
+
+Files: libs/ardour/arm_neon_functions.cc
+ libs/ardour/sse_functions_avx_linux.cc
+ libs/ardour/x86_functions_fma.cc
+ libs/ardour/x86_functions_avx512f.cc
+Copyright: 2015, Paul Davis <paul@linuxaudiosystems.com>
+ 2020-2023, Ayan Shafqat <ayan.x.shafqat@gmail.com>
+ 2021-2024, Robin Gareus <robin@gareus.org>
+License: GPL-2+
+
+## libs/ardouralsautil
+Files:
+ libs/ardouralsautil/ardouralsautil/reserve.h
+ libs/ardouralsautil/reserve.c
+Copyright:
+ 2009, Lennart Poettering
+License: Expat
+
+## libs/aaf
+Files:
+ libs/aaf/*
+Copyright: 2017-2024, Adrien Gesta-Fline
+License: GPL-2+
+
+## libs/appleutility
+Files:
+ libs/appleutility/*
+Copyright:
+ 2005-2014 Apple Computer, Inc.
+License: AML
+
+## libs/audiographer
+Files:
+ libs/audiographer/private/limiter/limiter.cc
+Copyright:
+ 2010-2022, Fons Adriaensen <fons@linuxaudio.org>
+ 2014-2022, Robin Gareus <robin@gareus.org>
+License: GPL-3+
+
+Files:
+ libs/audiographer/private/gdither/gdither*
+Copyright:
+ 2002, Steve Harris
+License: GPL-2+
+
+Files:
+ libs/audiographer/private/sndfile.hh
+Copyright:
+ 2005-2007, Erik de Castro Lopo <erikd@mega-nerd.com>
+License: BSD-3-clause
+
+
+## libs/clearlooks-newer
+Files:
+ libs/clearlooks-newer/*
+Copyright:
+ 2005-2006, Richard Stellingwerff
+ 2006, Daniel Borgman
+ 2006, Kulyk Nazar <schamane@myeburg.net>
+ 2006-2007, Benjamin Berg <benjamin@sipsolutions.net>
+ 2007, Andrea Cimitan
+License: LGPL-2+
+
+
+## libs/evoral
+Files:
+ libs/evoral/*
+Copyright:
+ 2000-2014, Paul Davis
+ 2008, David Robillard <https://drobilla.net/>
+License-Grant:
+ Evoral is free software; you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your
+ option) any later version.
+License: GPL-2+
+
+Files:
+ libs/evoral/libsmf/*
+Copyright:
+ 2007-2008, Edward Tomasz Napierała <trasz@FreeBSD.org>
+License: BSD-2-Clause~although
+
+Files:
+ libs/evoral/evoral/midi_events.h
+Copyright:
+ 1998-2001, Jaroslav Kysela <perex@perex.cz>
+ 1998-2001, Abramo Bagnara <abramo@alsa-project.org>
+ 1998-2001, Takashi Iwai <tiwai@suse.de>
+License: LGPL-2.1+
+Comment:
+ Copyright holders found in project alsa-lib in file include/asoundef.h.
+
+
+## libs/fluidsynth
+Files:
+ libs/fluidsynth/*
+Copyright:
+ 1999-2001, Josh Green
+ 2000-2011, Peter Hanappe, Markus Nentwig and others.
+ 2018, Carlo Bramini
+License: LGPL-2.1+
+
+
+## libs/gtkmm2ext
+Files:
+ libs/gtkmm2ext/gtkmm2ext/rgb_macros.h
+Copyright:
+ 2000, EMC Capital Management, Inc
+License: GPL-2+
+
+Files:
+ libs/gtkmm2ext/sync-menu.c
+ libs/gtkmm2ext/gtkmm2ext/sync-menu.h
+ libs/gtkmm2ext/gtkmm2ext/gtkapplication.h
+Copyright:
+ 2007, Pioneer Research Center USA, Inc / 2007 Imendio AB
+License: LGPL-2.1
+
+Files:
+ libs/gtkmm2ext/gtkapplication.c
+ libs/gtkmm2ext/application.cc
+ libs/gtkmm2ext/gtkapplication_x11.c
+ libs/gtkmm2ext/gtkmm2ext/gtkapplication-private.h
+ libs/gtkmm2ext/gtkapplication_win32.c
+Copyright:
+ 2009, Paul Davis / 2007 Imendio AB / 2007 Pioneer Research Center USA, Inc
+License: LGPL-2.1
+
+
+## libs/hidapi
+Files:
+ libs/hidapi/*
+Copyright: 2009-2012 Alan Ott, Signal 11 Software
+License: GPL-3
+
+
+## libs/libltc
+Files:
+ libs/libltc/*
+Copyright:
+ 2005, Maarten de Boer <mdeboer@iua.upf.es>
+ 2006-2014, Robin Gareus <robin@gareus.org>
+ 2008-2009, Jan Weiß <jan@geheimwerk.de>
+License: LGPL-3+
+
+
+## libs/lua
+Files: libs/lua/LuaBridge/*
+Copyright:
+ 2001, Andrei Alexandrescu
+ 2007, Nathan Reed
+ 2008, Nigel Atkinson
+ 2012, Vinnie Falco <vinnie.falco@gmail.com>
+ 2016-2018, Robin Gareus
+License: Expat
+
+Files: libs/lua/lua-5.3.5/*
+Copyright:
+ 1994-2018, Lua.org, PUC-Rio.
+License: Expat
+
+
+## libs/midi++2
+Files:
+ libs/midi++2/*
+Copyright:
+ 2008-2016, Hans Baier
+ 2006-2020, the Ardour Developers
+License: GPL-2+
+
+
+## libs/panners
+Files: libs/panners/vbap/vbap_speakers.cc
+Copyright: 1998, Ville Pulkki, Helsinki University of Technology. All
+License: vbap
+ The software may be used, distributed, and included to commercial
+ products without any charges. When included to a commercial product,
+ the method "Vector Base Amplitude Panning" and its developer Ville
+ Pulkki must be referred to in documentation.
  .
- This package is distributed in the hope that it will be useful,
+ This software is provided "as is", and Ville Pulkki or Helsinki
+ University of Technology make no representations or warranties,
+ expressed or implied. By way of example, but not limitation, Helsinki
+ University of Technology or Ville Pulkki make no representations or
+ warranties of merchantability or fitness for any particular purpose or
+ that the use of the licensed software or documentation will not
+ infringe any third party patents, copyrights, trademarks or other
+ rights. The name of Ville Pulkki or Helsinki University of Technology
+ may not be used in advertising or publicity pertaining to distribution
+ of the software.
+
+
+## libs/pbd
+Files:
+ libs/pbd/pbd/timersub.h
+Copyright:
+ 1991-2009 Free Software Foundation, Inc.
+License: LGPL-2.1+
+
+Files:
+ libs/pbd/pbd/undo.h
+ libs/pbd/undo.cc
+Copyright:
+ 2001-2002, Brett Viren & Paul Davis
+License: GPL-2+
+
+Files:
+ libs/pbd/pbd/command.h
+ libs/pbd/pbd/memento_command.h
+Copyright:
+ 2006, Hans Fugal
+ 2006, Paul Davis
+License: GPL-2+
+
+Files: libs/pbd/pbd/mpmc_queue.h
+Copyright: 2010-2011, Dmitry Vyukov
+ 2019, Robin Gareus <robin@gareus.org>
+License: GPL-2+
+
+Files:
+ libs/pbd/pbd/ringbuffer.h
+ libs/pbd/pbd/ringbufferNPT.h
+Copyright:
+ 2000, Benno Senoner
+ 2000, Paul Davis
+License: GPL-2+
+
+Files:
+ libs/pbd/pbd/xml++.h
+ libs/pbd/xml++.cc
+Copyright:
+ 2000, Ari Johnson
+License-Grant:
+ libxml++ and this file are [...] covered by the GNU Lesser General
+ Public License, which should be included with libxml++ as the file
+ COPYING.
+ .
+ Modified for Ardour and released under the same terms.
+License: LGPL-2.1+
+Comment:
+ Libxml++ is licensed as LGPL-2.1+.
+
+Files:
+ libs/pbd/pbd/compose.h
+Copyright:
+ 2002, Ole Laursen <olau@hardworking.dk>
+License: LGPL-2.1+
+
+Files:
+ libs/pbd/pbd/fastlog.h
+Copyright:
+ unknown. Code by Laurent de Soras <laurent@ohmforce.com>
+License: WTFPL-2
+
+Files:
+ libs/pbd/system_exec.cc
+Copyright:
+ 2005-2008, Lennart Poettering
+ 2010-2014, Robin Gareus <robin@gareus.org>
+ 2010, Paul Davis
+License: GPL-2+
+
+
+## libs/plugins
+Files: libs/plugins/a-fluidsynth.lv2/*
+ libs/plugins/reasonablesynth.lv2/*
+Copyright: 2013-2019, Robin Gareus <robin@gareus.org>
+ 2016-2019, Robin Gareus <robin@gareus.org>
+License: GPL-2+
+
+Files: libs/plugins/a-delay.lv2/*
+ libs/plugins/a-eq.lv2/*
+Copyright: 2016-2017, Damien Zammit <damien@zamaudio.com>
+ 2016-2017, Robin Gareus <robin@gareus.org>
+License: GPL-2+
+
+Files: libs/plugins/a-reverb.lv2/*
+Copyright: 2003-2004, Fredrik Kilander <fk@dsv.su.se>
+ 2008-2016, Robin Gareus <robin@gareus.org>
+ 2012, Will Panther <pantherb@setbfree.org>
+ 2016, Damien Zammit <damien@zamaudio.com>
+License: GPL-2+
+
+Files: libs/plugins/a-exp.lv2/*
+Copyright: 2016-2017, Damien Zammit <damien@zamaudio.com>
+ 2017-2019, Johannes Mueller <github@johannes-mueller.org>
+License: GPL-2+
+
+Files: libs/plugins/a-comp.lv2/*
+Copyright: 2016-2017, Damien Zammit <damien@zamaudio.com>
+ 2016-2017, Robin Gareus <robin@gareus.org>
+ 2017-2019, Johannes Mueller <github@johannes-mueller.org>
+License: GPL-2+
+
+Files: libs/plugins/shared/dynamic_display.c
+Copyright: 2018, Johannes Mueller <github@johannes-mueller.org>
+License: GPL-2+
+
+
+## libs/ptformat
+Files: libs/ptformat/ptformat.*
+Copyright: 2015-2019, Damien Zammit
+ 2015-2019, Robin Gareus
+License: LGPL-2.1+
+
+
+## libs/qm-dsp
+Files:
+ libs/qm-dsp/*
+Copyright:
+ 2006-2010, Chris Cannam
+ 2006-2010, Centre for Digital Music (C4DM), Queen Mary, University of London
+License: GPL-2+
+
+Files:
+ libs/qm-dsp/maths/CosineDistance.*
+Copyright:
+ 2008, Kurt Jacobson
+License: GPL-2+
+
+Files: libs/qm-dsp/maths/Polyfit.h
+Copyright:
+ 1981-2001, Allen Miller, David J Taylor and others
+License: MPL-1.1
+
+Files:
+ libs/qm-dsp/dsp/rhythm/BeatSpectrum.*
+Copyright:
+ 2008, Kurt Jacobson
+ 2008, Centre for Digital Music (C4DM), Queen Mary, University of London
+License: GPL-2+
+
+Files:
+ libs/qm-dsp/dsp/mfcc/MFCC.h
+ libs/qm-dsp/dsp/mfcc/MFCC.cpp
+Copyright:
+ 2005, Nicolas Chetry
+ 2008, Centre for Digital Music (C4DM), Queen Mary, University of London
+License: GPL-2+
+
+Files:
+ libs/qm-dsp/dsp/tonal/*
+Copyright:
+ 2006, Martin Gasser
+License: GPL-2+
+
+Files:
+ libs/qm-dsp/dsp/wavelet/Wavelet.*
+Copyright:
+ 2009, Thomas Wilmering
+License: GPL-2+
+
+Files:
+ libs/qm-dsp/dsp/tempotracking/TempoTrackV2.*
+ libs/qm-dsp/dsp/tempotracking/DownBeat.*
+Copyright:
+ 2008-2009, Matthew Davies
+ 2008-2009, Centre for Digital Music (C4DM), Queen Mary, University of London
+License: GPL-2+
+
+Files:
+ libs/qm-dsp/dsp/tempotracking/TempoTrack.cpp
+Copyright:
+ 2005-2006, Christian Landone and Matthew Davies
+License: GPL-2+
+
+Files: libs/qm-dsp/ext/kissfft/*
+Copyright:
+ 2003-2010, Mark Borgerding
+License: BSD-3-clause
+
+Files: libs/qm-dsp/dsp/chromagram/ConstantQ.*
+Copyright:
+ 2005-2006, Christian Landone
+License: GPL-2+
+
+Files: libs/tk/*
+Copyright: 1992-1994, The Regents of the University of California.
+ 1995-1999, Peter Mattis, Spencer Kimball and Josh MacDonald
+ 2006-2007, Async Open Source
+ 1987-1988, Digital Equipment Corporation, Maynard, Massachusetts.
+ 1999-2003, The Free Software Foundation
+ 2005-2007, Imendio AB
+ 2005-2009, Novell, Inc.
+ 1987-1998, 1998, The Open Group
+ 2008, Openismus GmbH
+ 1998-2010, Red Hat, Inc.
+ 1994-2007, Sun Microsystems Inc.
+ 2005-2007, Emmanuele Bassi
+ 2002-2004, Anders Carlsson <andersca@gnome.org>
+ 2003-2009, Matthias Clasen <mclasen@redhat.com>
+ 2003, Alex Graveley
+ 2004-2006, Christian Hammond
+ 2002, James Henstridge <james@daa.com.au>
+ 1998-2006, Tim Janik
+ Christian Kellner <gicmo@gnome.org>
+ 2006-2012, Alexander Larsson <alexl@redhat.com>
+ 1998-2007, Tor Lillqvist
+ Federico Mena
+ 2009, Bastien Nocera <hadess@hadess.net>
+ 2005, Carlos Garnacho Parro <carlosg@gnome.org>
+ 2008, Cody Russell
+ 2002-2009, Kristian Rietveld <kris@gtk.org>
+ 2004, Lorenzo Gil Sanchez
+ 2003-2004, Soeren Sandmann <sandmann@daimi.au.dk>
+ 2007, John Stowers, Neil Jagdish Patel.
+ 2009, David Zeuthen
+ 1998-2017, the GTK+ authors
+License: LGPL-2+
+
+Files: libs/tk/*mm/*
+Copyright: 1998-2010, The gtkmm Development Team
+License: LGPL-2.1+
+
+Files: libs/tk/suil/*
+Copyright: 2007-2017, David Robillard <http://drobilla.net>
+License: ISC
+
+Files: libs/tk/suil/cocoa_in_gtk2.mm
+Copyright: 2011-2017, David Robillard <http://drobilla.net>
+  2014, Robin Gareus <robin@gareus.org>
+License: ISC
+
+Files: libs/tk/suil/host.c
+Copyright: 2011-2017, David Robillard <http://drobilla.net>
+  2017, Stefan Westerfeld <stefan@space.twc.de>
+License: ISC
+
+## libs/vamp-*
+Files: libs/vamp-*
+Copyright:
+ 2000-2008, Chris Cannam
+ 2006-2008, Centre for Digital Music (C4DM), Queen Mary, University of London
+License: Expat and other-nopromo-Chris
+
+Files:
+ libs/vamp-plugins/AmplitudeFollower.*
+Copyright:
+ 2006, Dan Stowell
+License: Expat and other-nopromo-Chris
+
+Files:
+ libs/vamp-plugins/Onset.* libs/vamp-plugins/PercussionOnsetDetector.cpp
+Copyright:
+ 2006, 2010 Chris Cannam.
+License: GPL-2+
+
+Files:
+ libs/vamp-plugins/ebu_r128_proc.*
+Copyright:
+ 2010-2011, Fons Adriaensen <fons@linuxaudio.org>
+ 2015, Robin Gareus <robin@gareus.org>
+License: GPL-2+
+
+Files: libs/vamp-plugins/BarBeatTrack.cpp
+ libs/vamp-plugins/BeatTrack.cpp
+ libs/vamp-plugins/ChromagramPlugin.cpp
+ libs/vamp-plugins/KeyDetect.cpp
+ libs/vamp-plugins/OnsetDetect.cpp
+ libs/vamp-plugins/TonalChangeDetect.cpp
+ libs/vamp-plugins/Transcription.cpp
+ libs/vamp-plugins/SimilarityPlugin.h
+Copyright:
+ 2005-2013, Centre for Digital Music (C4DM), Queen Mary, University of London
+License: GPL-2+
+
+## libs/vst3
+Files:
+ libs/vst3/*
+Copyright: 2019, Steinberg Media Technologies GmbH
+License: GPL-3
+
+## libs/zita-*
+Files:
+ libs/zita-*
+Copyright:  2006-2022 Fons Adriaensen <fons@linuxaudio.org>
+License: GPL-3+
+
+
+# surfaces
+
+Files: libs/surfaces/cc121/*.*
+Copyright:
+ 2006-2016, Paul Davis
+ 2016, W.P. van Paassen
+ 2016-2019, Robin Gareus
+License: GPL-2+
+
+Files: libs/surfaces/console1/*
+Copyright: 2023, Holger Dehnhardt <holger@dehnhardt.org>
+License: GPL-2+
+
+Files: libs/surfaces/contourdesign/*
+Copyright: 2017-2019, Johannes Mueller <github@johannes-mueller.org>
+ 2019, Robin Gareus
+License: GPL-2+
+
+Files:
+ libs/surfaces/faderport*/gui.*
+Copyright: 2015-2019, Paul Davis <paul@linuxaudiosystems.com>
+ 2017-2018, Robin Gareus <robin@gareus.org>
+ 2019, Johannes Mueller <github@johannes-mueller.org>
+License: GPL-2+
+
+Files:
+ libs/surfaces/frontier/kernel_drivers/tranzport.c
+Copyright:
+ 2004, Greg Kroah-Hartman (greg@kroah.com)
+ 2005, Michael Hund <mhund@ld-didactic.de>
+ 2007, Michael Taht (m@taht.net)
+ 2003, David Glance <advidgsf@sourceforge.net>
+License: GPL-2+
+
+Files: libs/surfaces/launch_control_xl/*
+Copyright: 2018, the Ardour Developers
+ 2018, Térence Clastres <t.clastres@gmail.com>
+ 2018-2019, Jan Lentfer <jan.lentfer@web.de>
+License: GPL-2+
+
+Files: libs/surfaces/mackie/*
+Copyright:
+ 2006-2008, John Anderson
+ 2007-2019, the Ardour Developers
+License: GPL-2+
+
+Files: libs/surfaces/tranzport/*
+Copyright:
+ 2006, Paul Davis <pbd@op.net>
+ 2007, Michael Taht
+License: GPL-2+
+
+Files: libs/surfaces/us2400/gui.h
+Copyright: 2017, Ben Loftis <ben@harrisonconsoles.com>
+ 2019, Johannes Mueller <github@johannes-mueller.org>
+License: GPL-2+
+
+Files: libs/surfaces/us2400/controls.cc
+Copyright: 2006-2007, John Anderson
+ 2017, Ben Loftis <ben@harrisonconsoles.com>
+License: GPL-2+
+
+Files: libs/surfaces/websockets/*
+Copyright:
+ 2020, Luciano Iam <lucianito@gmail.com>
+ 2009-2022, the Ardour Developers
+License: GPL-2+
+
+Files: share/web_surfaces/*
+Copyright:
+ 2020, Luciano Iam <lucianito@gmail.com>
+ 2009-2022, the Ardour Developers
+License: GPL-3+
+
+
+# misc
+
+Files: doc/tempo.tex
+Copyright: 2018, Julien "_FrnchFrgg_" RIVAUD
+License: GPL-3+
+
+Files:
+ */gettext.h
+Copyright:
+ 1995-2020, Free Software Foundation, Inc
+License: LGPL-2+
+
+Files: share/scripts/raptor_arp.lua
+ share/scripts/barlow_arp.lua
+Copyright: 2021-2023, Albert Gräf <aggraef@gmail.com>
+License: GPL-3+
+
+Files: share/scripts/simple_arp.lua
+Copyright: 2023, Albert Gräf <aggraef@gmail.com>
+License: Expat
+Comment:
+ From: Albert Graef <aggraef@gmail.com>
+ To: IOhannes m zmölnig <zmoelnig@iem.at>
+ Message-ID: <CA+rUic1Zptx=6Pfk1h3NemctQKBpRhfkaO7hZ7Y0pfQbh3qGzw@mail.gmail.com>
+ Subject: Re: license ardour:simple_arp.lua
+ Date: Tue, 17 Oct 2023 00:21:41 +0200
+ .
+ Gemeint ist diese Lizenz hier: https://opensource.org/license/mit/ (SPDX-Id: MIT).
+
+Files:
+ tools/CrashReporter/*
+Copyright: 2009, Penguin Sounds.
+License: GPL-2+
+
+Files:
+ tools/session_exchange.py
+Copyright:
+ 2004-2005, Taybin Rutkin
+License: GPL-2+
+Comment:
+ From: Paul Davis <paul@linuxaudiosystems.com>
+ To: Jaromír Mikeš <mira.mikes@gmail.com>
+ Copy: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+ Subject: Re: Ardour3 in debian
+ Date: Wed Sep 18 13:32:49 UTC 2013
+ .
+ GPL2+ is taybin's answer (actually, his real answer is that he doesn't care :)
+ .
+ --p
+ .
+ On Wed, Sep 18, 2013 at 2:53 AM, Jaromír Mikeš <mira.mikes at gmail.com> wrote:
+ .
+ >
+ > 2013/9/17 Paul Davis <paul at linuxaudiosystems.com>
+ >
+ >> Since that script (session_exchange.py) no longer works, I suggest you
+ >> remove it from your packaging.
+ >>
+ >> The licensing intent ... I will ask Taybin.
+ >>
+ >
+ > Thank you Paul for prompt answer,
+ >
+ > removing session_exchange.py would be solution, clarifying from Taybin
+ > would be great.
+ >
+ > mira
+
+Files:
+ tools/omf/loader.cc
+ tools/omf/omftool.cc
+Copyright:
+ 2009, Hannes Breul
+License: zlib
+
+Files:
+ debian/*
+Copyright:
+ 2013-2016, Adrian Knoth <adi@drcomp.erfurt.thur.de>
+ 2013-2016, Jaromír Mikeš <mira.mikes@seznam.cz>
+ 2015-2023, IOhannes m zmölnig <umlaeute@debian.org>
+ 2019-2023, Olivier Humbert <trebmuh@tuxfamily.org>
+ 2020-2021, Erich Eickmeyer <erich@ericheickmeyer.com>
+ 2020-2021, Dennis Braun <d_braun@kabelmail.de>
+License: GPL-2+
+
+
+# ######################################################################
+# licenses
+# ######################################################################
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the
+ Free Software Foundation; either version 2, or (at your option) any
+ later version.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ Some files differ from above by replacing "this program" with "this
+ file".
+ .
+ On Debian GNU systems, the complete text of the GNU General Public
+ License (GPL) version 2 or later can be found in
+ '/usr/share/common-licenses/GPL-2'.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+License: GPL-3
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, version 3 of the License.
+ .
+ This program is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
+Comment: You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+License: GPL-3+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or (at your
+ option) any later version.
  .
- You should have received a copy of the GNU General Public License
- along with this program. If not, see <https://www.gnu.org/licenses/>
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+Comment: You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or modify it
+ under the terms of the GNU Lesser General Public License as published
+ by the Free Software Foundation; either version 2.1 of the License, or
+ (at your option) any later version.
  .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+ This library is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser
+ General Public License for more details.
+ .
+ On Debian GNU systems, the complete text of the GNU Lesser General
+ Public License (LGPL) version 2.1 or later can be found in
+ '/usr/share/common-licenses/LGPL-2.1'.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this program.  If not, see
+ <https://www.gnu.org/licenses/>.
+
+License: LGPL-2+
+ This library is free software; you can redistribute it and/or modify it
+ under the terms of the GNU Library General Public License as published
+ by the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Library General Public License for more details.
+ .
+ On Debian GNU systems, the complete text of the GNU Library General
+ Public License (LGPL - later renamed GNU Lesser General Public License)
+ version 2 or later can be found in '/usr/share/common-licenses/LGPL-2'.
+ .
+ You should have received a copy of the GNU Library General Public
+ License along with this program.  If not, see
+ <https://www.gnu.org/licenses/>.
+
+License: LGPL-2.1
+ This library is free software; you can redistribute it and/or modify it
+ under the terms of the GNU Lesser General Public License as published
+ by the Free Software Foundation; version 2.1 of the License.
+ .
+ This library is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian GNU systems, the complete text of the GNU Lesser General
+ Public License (LGPL) version 2.1 can be found in
+ '/usr/share/common-licenses/LGPL-2.1'.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this program.  If not, see
+ <https://www.gnu.org/licenses/>.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.
+
+License: other-nopromo-Chris
+ Except as contained in this notice, the names of the Centre for Digital
+ Music; Queen Mary, University of London; and Chris Cannam shall not be
+ used in advertising or otherwise to promote the sale, use or other
+ dealings in this Software without prior written authorization.
+
+License: AML
+ IMPORTANT:  This Apple software is supplied to you by Apple Computer,
+ Inc. ("Apple") in consideration of your agreement to the following
+ terms, and your use, installation, modification or redistribution of
+ this Apple software constitutes acceptance of these terms.  If you do
+ not agree with these terms, please do not use, install, modify or
+ redistribute this Apple software.
+ .
+ In consideration of your agreement to abide by the following terms, and
+ subject to these terms, Apple grants you a personal, non-exclusive
+ license, under Apple’s copyrights in this original Apple software (the
+ "Apple Software"), to use, reproduce, modify and redistribute the Apple
+ Software, with or without modifications, in source and/or binary forms;
+ provided that if you redistribute the Apple Software in its entirety
+ and without modifications, you must retain this notice and the
+ following text and disclaimers in all such redistributions of the Apple
+ Software.  Neither the name, trademarks, service marks or logos of
+ Apple Computer, Inc. may be used to endorse or promote products derived
+ from the Apple Software without specific prior written permission from
+ Apple.  Except as expressly stated in this notice, no other rights or
+ licenses, express or implied, are granted by Apple herein, including
+ but not limited to any patent rights that may be infringed by your
+ derivative works or by other works in which the Apple Software may be
+ incorporated.
+ .
+ The Apple Software is provided by Apple on an "AS IS" basis.  APPLE
+ MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION
+ THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS
+ FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND
+ OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
+ .
+ IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL
+ OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+ BUSINESS INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION,
+ MODIFICATION AND/OR DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED
+ AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE),
+ STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+
+License: WTFPL-2
+ This work is free. You can redistribute it and/or modify it under the
+ terms of the Do What The Fuck You Want To Public License, Version 2,
+ as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
+
+License: zlib
+ This software is provided 'as-is', without any express or implied
+ warranty.  In no event will the authors be held liable for any damages
+ arising from the use of this software.
+ .
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it
+ freely, subject to the following restrictions:
+ .
+ 1. The origin of this software must not be misrepresented; you must not
+    claim that you wrote the original software. If you use this software
+    in a product, an acknowledgment in the product documentation would be
+    appreciated but is not required.
+ 2. Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original software.
+ 3. This notice may not be removed or altered from any source distribution.
+
+License: LGPL-3+
+ This package is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 3 of the License, or (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+X-Comment: On Debian systems, the complete text of the GNU Lesser
+ General Public License can be found in `/usr/share/common-licenses/LGPL-3'.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.
+
+License: BSL-1.0
+ Distributed under the Boost Software License, Version 1.0. (See
+ accompanying file LICENSE_1_0.txt or copy at
+ https://www.boost.org/LICENSE_1_0.txt)
+
+License: ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THIS SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+ * Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+ * Neither the author nor the names of any contributors may be used
+   to endorse or promote products derived from this software without
+   specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+ TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: MPL-1.1
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the
+ License.
+ .
+ The Original Code is JEDI math.
+ .
+ You may obtain a copy of the License at https://www.mozilla.org/MPL/
+
+License: BSD-2-Clause~although
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+  1. Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+  2. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the
+     distribution.
+ .
+ ALTHOUGH THIS SOFTWARE IS MADE OF WIN AND SCIENCE, IT IS PROVIDED BY
+ THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED
+ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN
+ NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+ IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.

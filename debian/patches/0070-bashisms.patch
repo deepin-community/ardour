@@ -1,0 +1,16 @@
+Description: Fix bashisms
+ 'ulimit' is a bash-builtin, probably not available on POSIX shells
+Author: IOhannes m zmölnig
+Origin: Debian
+Bug: https://tracker.ardour.org/view.php?id=8999
+Last-Update: 2022-10-17
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- ardour.orig/gtk2_ardour/ardour.sh.in
++++ ardour/gtk2_ardour/ardour.sh.in
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/bin/bash
+ 
+ #
+ # This script runs an installed version of Ardour. It sets a few environment variables

@@ -1,0 +1,48 @@
+From: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Date: Sat, 30 May 2020 10:16:59 +0200
+Subject: Tell the user to install ardour-video-timeline
+
+Forwarded: not-needed
+Last-Update: 2016-10-18
+
+to get rid of the harvid/xjadeo/ffmpeg messages.
+Last-Update: 2016-10-18
+---
+ gtk2_ardour/transcode_ffmpeg.cc    | 4 +++-
+ gtk2_ardour/video_server_dialog.cc | 1 +
+ gtk2_ardour/video_timeline.cc      | 1 +
+ 3 files changed, 5 insertions(+), 1 deletion(-)
+
+--- ardour.orig/gtk2_ardour/transcode_ffmpeg.cc
++++ ardour/gtk2_ardour/transcode_ffmpeg.cc
+@@ -64,7 +64,9 @@
+ 		                             "If you already have a suitable ffmpeg installation on your system, we recommend creating "
+ 		                             "symbolic links from ffmpeg to ffmpeg_harvid and from ffprobe to ffprobe_harvid.\n"
+ 		                             "\n"
+-		                             "see also http://manual.ardour.org/video-timeline/setup/"),
++		                             "see also http://manual.ardour.org/video-timeline/setup/"
++		                             "\n\n"
++		                             "Install the 'ardour-video-timeline' Debian package!"),
+ 		                           PROGRAM_NAME)
+ 		        << endmsg;
+ 		return;
+--- ardour.orig/gtk2_ardour/video_server_dialog.cc
++++ ardour/gtk2_ardour/video_server_dialog.cc
+@@ -115,6 +115,7 @@
+ 						"\n"
+ 						"see also http://manual.ardour.org/video-timeline/setup/"
+ 					 ), PROGRAM_NAME)
++			<< "\n\nInstall the 'ardour-video-timeline' Debian package!\n"
+ 			<< endmsg;
+ 	}
+ 
+--- ardour.orig/gtk2_ardour/video_timeline.cc
++++ ardour/gtk2_ardour/video_timeline.cc
+@@ -719,6 +719,7 @@
+ 				"It should point to an application compatible with xjadeo's remote-control interface 'xjremote').\n"
+ 				"\n"
+ 				"see also http://manual.ardour.org/video-timeline/setup/")
++			<< "\n\nInstall the 'ardour-video-timeline' Debian package!\n"
+ 			<< endmsg;
+ 	}
+ 

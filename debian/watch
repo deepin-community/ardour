@@ -1,0 +1,7 @@
+version=4
+opts=\
+  dversionmangle=auto,\
+  filenamemangle=s/.+\/Ardour-(\d\S*)\.tar\.bz2/ardour-$1\.tar\.bz2/,\
+  uversionmangle=s/-pre/~pre/;s/-rc/~rc/,\
+  repacksuffix=+ds \
+  https://community.ardour.org/src/ .*/Ardour-(\d\S*)\.tar\.bz2

@@ -1,0 +1,32 @@
+From: Felipe Sateler <fsateler@debian.org>
+Date: Sat, 30 May 2020 10:16:59 +0200
+Subject: Log waf messages to stdout, not stderr
+
+Forwarded: no
+
+The buildds kill the build if they don't see messages in stdout for a
+long time. Unfortunately, waf defaults to printing such messages to
+stderr, so ardour takes too long on slower archs. Work around that
+by printing to stdout.
+---
+ wscript | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+--- ardour.orig/wscript
++++ ardour/wscript
+@@ -1648,6 +1648,15 @@
+ 
+     bld.env['DATE'] = rev_date
+ 
++    # Log command executions to stdout, not err
++    def our_log(msg):
++        if not msg:
++            return
++        sys.stdout.write(str(msg))
++        sys.stdout.flush()
++
++    bld.to_log = our_log
++
+     # add directories that contain only headers, to workaround an issue with waf
+ 
+     if not bld.is_defined('USE_EXTERNAL_LIBS'):
