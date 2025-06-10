@@ -1,0 +1,347 @@
+From: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Date: Sat, 30 May 2020 10:17:00 +0200
+Subject: fix spelling errors
+
+discovered by lintian
+Last-Update: 2021-08-22
+---
+
+--- ardour.orig/gtk2_ardour/po/el.po
++++ ardour/gtk2_ardour/po/el.po
+@@ -9341,7 +9341,7 @@
+ msgid ""
+ "Editing the MIDI files by adding new content will re-create the file and "
+ "disable this warning,\n"
+-"but also prevent future recovery of the original in the exising region(s).\n"
++"but also prevent future recovery of the original in the existing region(s).\n"
+ msgstr ""
+ 
+ #: missing_plugin_dialog.cc:32
+--- ardour.orig/gtk2_ardour/po/en_GB.po
++++ ardour/gtk2_ardour/po/en_GB.po
+@@ -9331,7 +9331,7 @@
+ msgid ""
+ "Editing the MIDI files by adding new content will re-create the file and "
+ "disable this warning,\n"
+-"but also prevent future recovery of the original in the exising region(s).\n"
++"but also prevent future recovery of the original in the existing region(s).\n"
+ msgstr ""
+ 
+ #: missing_plugin_dialog.cc:32
+--- ardour.orig/gtk2_ardour/po/es.po
++++ ardour/gtk2_ardour/po/es.po
+@@ -9586,7 +9586,7 @@
+ msgid ""
+ "Editing the MIDI files by adding new content will re-create the file and "
+ "disable this warning,\n"
+-"but also prevent future recovery of the original in the exising region(s).\n"
++"but also prevent future recovery of the original in the existing region(s).\n"
+ msgstr ""
+ 
+ #: missing_plugin_dialog.cc:32
+--- ardour.orig/gtk2_ardour/po/eu.po
++++ ardour/gtk2_ardour/po/eu.po
+@@ -9809,7 +9809,7 @@
+ msgid ""
+ "Editing the MIDI files by adding new content will re-create the file and "
+ "disable this warning,\n"
+-"but also prevent future recovery of the original in the exising region(s).\n"
++"but also prevent future recovery of the original in the existing region(s).\n"
+ msgstr ""
+ "MIDI fitxategiak eduki berria gehituz editatzeak fitxategia birsortu eta "
+ "abisu hau desgaituko du,\n"
+--- ardour.orig/gtk2_ardour/po/ja.po
++++ ardour/gtk2_ardour/po/ja.po
+@@ -9773,7 +9773,7 @@
+ msgid ""
+ "Editing the MIDI files by adding new content will re-create the file and "
+ "disable this warning,\n"
+-"but also prevent future recovery of the original in the exising region(s).\n"
++"but also prevent future recovery of the original in the existing region(s).\n"
+ msgstr ""
+ "新しいコンテンツを加えることで MIDI ファイルを編集すると、ファイルが再作成さ"
+ "れこの警告も無効になりますが、\n"
+--- ardour.orig/gtk2_ardour/po/nn.po
++++ ardour/gtk2_ardour/po/nn.po
+@@ -9474,7 +9474,7 @@
+ msgid ""
+ "Editing the MIDI files by adding new content will re-create the file and "
+ "disable this warning,\n"
+-"but also prevent future recovery of the original in the exising region(s).\n"
++"but also prevent future recovery of the original in the existing region(s).\n"
+ msgstr ""
+ 
+ #: missing_plugin_dialog.cc:32
+--- ardour.orig/gtk2_ardour/po/pt.po
++++ ardour/gtk2_ardour/po/pt.po
+@@ -9344,7 +9344,7 @@
+ msgid ""
+ "Editing the MIDI files by adding new content will re-create the file and "
+ "disable this warning,\n"
+-"but also prevent future recovery of the original in the exising region(s).\n"
++"but also prevent future recovery of the original in the existing region(s).\n"
+ msgstr ""
+ 
+ #: missing_plugin_dialog.cc:32
+--- ardour.orig/gtk2_ardour/po/pt_PT.po
++++ ardour/gtk2_ardour/po/pt_PT.po
+@@ -9335,7 +9335,7 @@
+ msgid ""
+ "Editing the MIDI files by adding new content will re-create the file and "
+ "disable this warning,\n"
+-"but also prevent future recovery of the original in the exising region(s).\n"
++"but also prevent future recovery of the original in the existing region(s).\n"
+ msgstr ""
+ 
+ #: missing_plugin_dialog.cc:32
+--- ardour.orig/gtk2_ardour/po/sv.po
++++ ardour/gtk2_ardour/po/sv.po
+@@ -9352,7 +9352,7 @@
+ msgid ""
+ "Editing the MIDI files by adding new content will re-create the file and "
+ "disable this warning,\n"
+-"but also prevent future recovery of the original in the exising region(s).\n"
++"but also prevent future recovery of the original in the existing region(s).\n"
+ msgstr ""
+ 
+ #: missing_plugin_dialog.cc:32
+--- ardour.orig/session_utils/new_session.cc
++++ ardour/session_utils/new_session.cc
+@@ -55,7 +55,7 @@
+ file-name extension.\n\
+ \n\
+ If no template is specified, an empty session with a stereo master\n\
+-bus is created. The -m option allows to specify the master-bus channel\n\
++bus is created. The -m option allows one to specify the master-bus channel\n\
+ count. If zero is used as channel count, no master-bus is created.\n\
+ \n\
+ Note: this tool can only use static session templates.\n\
+--- ardour.orig/gtk2_ardour/po/ko.po
++++ ardour/gtk2_ardour/po/ko.po
+@@ -14995,7 +14995,7 @@
+ msgstr ""
+ 
+ #: rc_option_editor.cc:3074
+-msgid "Allow to resize Engine Dialog"
++msgid "Allow resizing the Engine Dialog"
+ msgstr "엔진 대화상자 크기조정 허용하기"
+ 
+ #: rc_option_editor.cc:3079
+@@ -16035,7 +16035,7 @@
+ "are not mapped on the screen.\n"
+ "\n"
+ "However some plugins do consume significant CPU and GPU resources even when "
+-"they are not currently displayed. This option allows to work around the "
++"they are not currently displayed. This option allows one to work around the "
+ "issue."
+ msgstr ""
+ "플러그인 창을 닫으면 일반적으로 숨길뿐입니다. 이렇게 하면 나중에 동일한 플러"
+--- ardour.orig/gtk2_ardour/po/zh.po
++++ ardour/gtk2_ardour/po/zh.po
+@@ -8096,7 +8096,7 @@
+ 
+ #: export_format_dialog.cc:674
+ msgid ""
+-"This option allows to add noise, to send complete mixes to the clients for "
++"This option allows one to add noise, to send complete mixes to the clients for "
+ "preview but watermarked. White noise is injected after analysis, right "
+ "before the sample-format conversion or encoding. The first noise burst "
+ "happens at 1/3 of the interval. Note: there is currently no limiter."
+@@ -9911,7 +9911,7 @@
+ "There are a total of 16 MIDI channels times 128 Control-Change parameters, "
+ "not including other MIDI controls. Showing all will add more than 2000 "
+ "automation lanes which is not generally useful. This will take some time and "
+-"also slow down the GUI signficantly."
++"also slow down the GUI significantly."
+ msgstr ""
+ "总共有16个 MIDI 声道乘以128个控制更改参数，不包括其他 MIDI 控件。“显示所有"
+ "\"将增加2000多个自动化线路，这通常是没用的。这将花费一些时间，也会显著降低 "
+--- ardour.orig/libs/ardour/po/zh.po
++++ ardour/libs/ardour/po/zh.po
+@@ -4206,7 +4206,7 @@
+ #~ "bar\" value"
+ #~ msgstr "节拍部分 XML 节点有一个非法的“每分钟拍子数”或者“每小节细分”数值"
+ 
+-#~ msgid "an error occured while writing a TOC/CUE file: %1"
++#~ msgid "an error occurred while writing a TOC/CUE file: %1"
+ #~ msgstr "当写入 TOC/CUE（目录数据/光盘映像辅助）文件时出现一个错误：%1"
+ 
+ #~ msgid "Session: you can't use that location for session (start/end)"
+--- ardour.orig/gtk2_ardour/po/de.po
++++ ardour/gtk2_ardour/po/de.po
+@@ -15481,7 +15481,7 @@
+ "kennzeichnen, damit es immer im Vordergrund bleibt."
+ 
+ #: rc_option_editor.cc:3090
+-msgid "Allow to resize Engine Dialog"
++msgid "Allow resizing the Engine Dialog"
+ msgstr "Erlaube Größenänderung des Engine-Dialogs"
+ 
+ #: rc_option_editor.cc:3095
+--- ardour.orig/gtk2_ardour/po/fr.po
++++ ardour/gtk2_ardour/po/fr.po
+@@ -15345,7 +15345,7 @@
+ "\"Utilitaire\" pour rester au-dessus."
+ 
+ #: rc_option_editor.cc:3090
+-msgid "Allow to resize Engine Dialog"
++msgid "Allow resizing the Engine Dialog"
+ msgstr "Permettre de redimensionner la boîte de dialogue du moteur"
+ 
+ #: rc_option_editor.cc:3095
+@@ -16474,7 +16474,7 @@
+ "are not mapped on the screen.\n"
+ "\n"
+ "However some plugins do consume significant CPU and GPU resources even when "
+-"they are not currently displayed. This option allows to work around the "
++"they are not currently displayed. This option allows one to work around the "
+ "issue."
+ msgstr ""
+ "La fermeture d'une fenêtre de greffons ne fait généralement que la masquer. "
+--- ardour.orig/gtk2_ardour/po/ru.po
++++ ardour/gtk2_ardour/po/ru.po
+@@ -15206,7 +15206,7 @@
+ msgstr ""
+ 
+ #: rc_option_editor.cc:3090
+-msgid "Allow to resize Engine Dialog"
++msgid "Allow resizing the Engine Dialog"
+ msgstr "Разрешить смену размера диалога движка"
+ 
+ #: rc_option_editor.cc:3095
+--- ardour.orig/libs/tk/ytk/gtkwindow.c
++++ ardour/libs/tk/ytk/gtkwindow.c
+@@ -522,7 +522,7 @@
+   /**
+    * GtkWindow:allow-shrink:
+    *
+-   * If %TRUE, the window has no mimimum size. Setting this to %TRUE is
++   * If %TRUE, the window has no minimum size. Setting this to %TRUE is
+    * 99&percnt; of the time a bad idea.
+    *
+    * Deprecated: 2.22: Use GtkWindow:resizable property instead.
+@@ -532,7 +532,7 @@
+                                    g_param_spec_boolean ("allow-shrink",
+ 							 P_("Allow Shrink"),
+ 							 /* xgettext:no-c-format */
+-							 P_("If TRUE, the window has no mimimum size. Setting this to TRUE is 99% of the time a bad idea"),
++							 P_("If TRUE, the window has no minimum size. Setting this to TRUE is 99% of the time a bad idea"),
+ 							 FALSE,
+ 							 GTK_PARAM_READWRITE | G_PARAM_DEPRECATED));
+ 
+--- ardour.orig/libs/tk/ytkmm/ytkmm/gtkmm/window.h
++++ ardour/libs/tk/ytkmm/ytkmm/gtkmm/window.h
+@@ -249,14 +249,14 @@
+   Glib::PropertyProxy_WriteOnly< Glib::ustring > property_startup_id() ;
+ 
+ 
+-  /** If TRUE, the window has no mimimum size. Setting this to TRUE is 99% of the time a bad idea.
++  /** If TRUE, the window has no minimum size. Setting this to TRUE is 99% of the time a bad idea.
+    *
+    * @return A PropertyProxy that allows you to get or set the value of the property,
+    * or receive notification when the value of the property changes.
+    */
+   Glib::PropertyProxy< bool > property_allow_shrink() ;
+ 
+-/** If TRUE, the window has no mimimum size. Setting this to TRUE is 99% of the time a bad idea.
++/** If TRUE, the window has no minimum size. Setting this to TRUE is 99% of the time a bad idea.
+    *
+    * @return A PropertyProxy_ReadOnly that allows you to get the value of the property,
+    * or receive notification when the value of the property changes.
+--- ardour.orig/libs/tk/ytk/gtkcellrenderercombo.c
++++ ardour/libs/tk/ytk/gtkcellrenderercombo.c
+@@ -136,7 +136,7 @@
+   /** 
+    * GtkCellRendererCombo:has-entry:
+    *
+-   * If %TRUE, the cell renderer will include an entry and allow to enter 
++   * If %TRUE, the cell renderer will include an entry and allow the user to enter 
+    * values other than the ones in the popup list. 
+    *
+    * Since: 2.6
+@@ -145,7 +145,7 @@
+                                    PROP_HAS_ENTRY,
+                                    g_param_spec_boolean ("has-entry",
+ 							 P_("Has Entry"),
+-							 P_("If FALSE, don't allow to enter strings other than the chosen ones"),
++							 P_("If FALSE, don't allow the user to enter strings other than the chosen ones"),
+ 							 TRUE,
+ 							 GTK_PARAM_READWRITE));
+ 
+--- ardour.orig/gtk2_ardour/po/cs.po
++++ ardour/gtk2_ardour/po/cs.po
+@@ -15215,7 +15215,7 @@
+ "užitkové okno."
+ 
+ #: rc_option_editor.cc:3090
+-msgid "Allow to resize Engine Dialog"
++msgid "Allow resizing the Engine Dialog"
+ msgstr "Umožnit změnu velikosti okna zvukového zařízení"
+ 
+ #: rc_option_editor.cc:3095
+--- ardour.orig/gtk2_ardour/po/pl.po
++++ ardour/gtk2_ardour/po/pl.po
+@@ -15111,7 +15111,7 @@
+ "co spowoduje, że pozostanie na wierzchu."
+ 
+ #: rc_option_editor.cc:3080
+-msgid "Allow to resize Engine Dialog"
++msgid "Allow resizing the Engine Dialog"
+ msgstr "Pozwalaj na zmianę rozmiaru okna dialogowego silnika"
+ 
+ #: rc_option_editor.cc:3085
+--- ardour.orig/gtk2_ardour/rc_option_editor.cc
++++ ardour/gtk2_ardour/rc_option_editor.cc
+@@ -3087,7 +3087,7 @@
+ #if !(defined PLATFORM_WINDOWS || defined __APPLE__)
+ 	bo = new BoolOption (
+ 			"allow-to-resize-engine-dialog",
+-			_("Allow to resize Engine Dialog"),
++			_("Allow resizing the Engine Dialog"),
+ 			sigc::mem_fun (UIConfiguration::instance(), &UIConfiguration::get_allow_to_resize_engine_dialog),
+ 			sigc::mem_fun (UIConfiguration::instance(), &UIConfiguration::set_allow_to_resize_engine_dialog)
+ 			);
+--- ardour.orig/gtk2_ardour/opts.cc
++++ ardour/gtk2_ardour/opts.cc
+@@ -180,7 +180,7 @@
+ 				exit (EXIT_SUCCESS);
+ 			}
+ #else
+-			cerr << "This is not a debug build - igoring '-D " << optarg << "'" << endl;
++			cerr << "This is not a debug build - ignoring '-D " << optarg << "'" << endl;
+ #endif /* NDEBUG */
+ 			break;
+ 
+--- ardour.orig/libs/aaf/AAFIEssenceFile.c
++++ ardour/libs/aaf/AAFIEssenceFile.c
+@@ -442,7 +442,7 @@
+ 
+ 	if (audioEssenceFile->type != AAFI_ESSENCE_TYPE_PCM) {
+ 		if (!write_header) {
+-			debug ("Writting exact copy of embedded file.");
++			debug ("Writing exact copy of embedded file.");
+ 		} else {
+ 			debug ("Rewriting file header.");
+ 		}
+--- ardour.orig/libs/ardour/config_text.cc
++++ ardour/libs/ardour/config_text.cc
+@@ -33,7 +33,7 @@
+ Futex Semaphore: True\n\
+ Freedesktop files: False\n\
+ G_ENABLE_DEBUG: True\n\
+-I/O Priorty Set: True\n\
++I/O Priority Set: True\n\
+ Libjack linking: link\n\
+ Libjack metadata: True\n\
+ Lua Binding Doc: False\n\
+--- ardour.orig/wscript
++++ ardour/wscript
+@@ -1596,7 +1596,7 @@
+     write_config_text('Futex Semaphore',       conf.is_defined('USE_FUTEX_SEMAPHORE'))
+     write_config_text('Freedesktop files',     opts.freedesktop)
+     write_config_text('G_ENABLE_DEBUG',        opts.gdebug or conf.env['DEBUG'])
+-    write_config_text('I/O Priorty Set',       conf.is_defined('HAVE_IOPRIO'))
++    write_config_text('I/O Priority Set',      conf.is_defined('HAVE_IOPRIO'))
+     write_config_text('Libjack linking',       conf.env['libjack_link'])
+     write_config_text('Libjack metadata',      conf.is_defined ('HAVE_JACK_METADATA'))
+     write_config_text('Lua Binding Doc',       conf.is_defined('LUABINDINGDOC'))

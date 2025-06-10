@@ -1,0 +1,25 @@
+From: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Date: Sat, 30 May 2020 13:26:55 +0200
+Subject: Strip MAJOR-version from executable
+
+Origin: Debian
+Forwarded: no
+Last-Update: 2020-05-30
+
+so the binary matches the manpages
+Last-Update: 2020-05-30
+---
+ gtk2_ardour/wscript | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- ardour.orig/gtk2_ardour/wscript
++++ ardour/gtk2_ardour/wscript
+@@ -741,7 +741,7 @@
+ 
+     obj              = bld(features = 'subst')
+     obj.source       = 'ardour.sh.in'
+-    obj.target       = 'ardour' + bld.env['MAJOR']
++    obj.target       = 'ardour'
+     obj.chmod        = Utils.O755
+     obj.dict         = wrapper_subst_dict
+     obj.install_path = bld.env['BINDIR']

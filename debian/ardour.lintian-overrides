@@ -1,0 +1,18 @@
+# These entries are not spelling errors.
+# 'Taht' is really a surname...
+spelling-error-in-copyright Taht That
+# ardour styles itself as "the digital audio workstation", so the article is by
+# intention
+description-synopsis-starts-with-article
+# this seems to be part of the API
+spelling-error-in-binary removeable removable [usr/lib/ardour*/libardour.so.*]
+# 'UserA' is shortcut for certain user as 'UserB' or 'UserC'
+spelling-error-in-binary UserA Users [usr/lib/ardour*/*/lib*.so*]
+# just a false positive...
+spelling-error-in-binary ProtocolL Protocol [usr/lib/ardour*/lib*.so*]
+spelling-error-in-binary enouH enough [usr/lib/ardour*/lib*.so*]
+spelling-error-in-binary enouH enough [usr/lib/ardour*/luasession]
+spelling-error-in-binary whitH with [usr/lib/ardour*/ardour-*]
+spelling-error-in-binary whitH with [usr/lib/ardour*/vamp/lib*.so]
+spelling-error-in-binary wtH with [usr/lib/ardour*/ardour-*]
+spelling-error-in-binary wtH with [usr/lib/ardour*/surfaces/lib*.so]

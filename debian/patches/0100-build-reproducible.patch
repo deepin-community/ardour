@@ -1,0 +1,32 @@
+From: Chris Lamb <lamby@debian.org>
+Date: Sat, 30 May 2020 10:16:59 +0200
+Subject: make build reproducible
+
+Forwarded: Paul Davis <paul@linuxaudiosystems.com>
+Last-Update: 2018-02-28
+---
+ wscript | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+--- ardour.orig/wscript
++++ ardour/wscript
+@@ -1550,10 +1550,18 @@
+ const char* const ardour_config_info = "\\n\\
+ ''')
+ 
++    config_substitutes = [('"', '\\"')]
++    if 'SOURCE_DATE_EPOCH' in os.environ:
++        # attempting to do a reproducible build
++        config_substitutes += [(os.getcwd(), '<<ARDOURSRCDIR>>')]
++
+     def write_config_text(title, val):
+         autowaf.display_msg(conf, title, val)
+         config_text.write(title + ': ')
+-        config_text.write(str(val).replace ('"', '\\"'))
++        val = str(val)
++        for a, b in config_substitutes:
++            val = val.replace(a, b)
++        config_text.write(val)
+         config_text.write("\\n\\\n")
+ 
+     write_config_text('Build documentation',   conf.env['DOCS'])

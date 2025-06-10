@@ -1,0 +1,22 @@
+Description: Allow compiling against jack1 headers
+ jack1_0.126.0 (now in testing) breaks upstream's assumption that
+ __jack_systemdeps_h__ can be used to detect jackd2.
+ As of ardour-7, the proper way would be to just use weak-linking for jack:
+ './waf configure --libjack=weak'
+Author: IOhannes m zmölnig
+Origin: Debian
+Forwarded: https://github.com/Ardour/ardour/commit/13de664ae6a184d15e94c8e373eee166a81ee08c
+Last-Update: 2022-06-30
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- ardour.orig/libs/backends/jack/jack_audiobackend.cc
++++ ardour/libs/backends/jack/jack_audiobackend.cc
+@@ -825,7 +825,7 @@
+ 
+ 	for (auto & thread : _jack_threads) {
+ 
+-#if defined(USING_JACK2_EXPANSION_OF_JACK_API) || defined __jack_systemdeps_h__
++#if defined(USING_JACK2_EXPANSION_OF_JACK_API)
+ 		// jack_client is not used by JACK2's implementation
+ 		// also jack_client_close() leaves threads active
+ 		if (jack_client_stop_thread (_priv_jack, thread) != 0)

@@ -1,0 +1,4 @@
+usr/bin/ffmpeg	/usr/bin/ffmpeg_harvid
+usr/bin/ffprobe	/usr/bin/ffprobe_harvid
+usr/share/man/man1/ffmpeg.1.gz	/usr/share/man/man1/ffmpeg_harvid.1.gz
+usr/share/man/man1/ffprobe.1.gz	/usr/share/man/man1/ffprobe_harvid.1.gz

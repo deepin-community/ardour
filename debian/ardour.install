@@ -1,0 +1,7 @@
+debian/*.svg usr/share/pixmaps
+debian/ardour.desktop usr/share/applications
+debian/tmp/etc/*
+debian/tmp/usr/bin/*
+debian/tmp/usr/lib/ardour8/*
+debian/tmp/usr/share/appdata/ardour8.appdata.xml /usr/share/metainfo/ardour.appdata.xml
+debian/tmp/usr/share/mime/packages/ardour.xml
